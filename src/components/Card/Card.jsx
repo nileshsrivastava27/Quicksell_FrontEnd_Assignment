@@ -11,7 +11,7 @@ const Card = ({id, title, tag, status}) => {
                 <div className="showStatus"></div>
             </div>
         </div>
-        <div className="cardTitle" style={{fontWeight : 200}} >
+        <div className="cardTitle" style={{fontWeight : 100}} >
             <p>{title}</p>
         </div>
         <div className="cardTags">

@@ -15,8 +15,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background: silver;
     border-radius: 50%;
 }
@@ -24,12 +24,12 @@
 .cardTags{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 9px;
 }
 
 .tags{
     width: max-content;
     padding: 2px 8px;
     border-radius: 5px;
-    border: 1px solid silver;
+    border: 1px solid black;
 }
