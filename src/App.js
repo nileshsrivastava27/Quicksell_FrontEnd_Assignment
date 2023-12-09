@@ -16,9 +16,9 @@ const App = () => {
   }, [dispatch])
 
   return allTickets ? (
-    <div style={{paddingTop : "10px"}} >
+    <div style={{paddingTop : "12px"}} >
       <TopNav/>
-      <hr style={{marginTop : "10px"}} />
+      <hr style={{marginTop : "12px"}} />
       <DashView/>
     </div>
   ) : <Loading/>

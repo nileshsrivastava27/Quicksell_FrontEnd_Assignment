@@ -46,7 +46,7 @@ const DashView = () => {
                   </div>
                   <div className="rightView">
                     <AiOutlinePlus />{" "}
-                    <span style={{ letterSpacing: "2px" }}>...</span>
+                    <span style={{ letterSpacing: "3px" }}>...</span>
                   </div>
                 </div>
                 <div className="dashList flex-gap-10">
