@@ -1,6 +1,6 @@
 import React from 'react'
 import './CardView.css';
-import userImage from '../Assets/user-picture.png';
+import userImage from '../Assets/user-image.png';
 
 const Card = ({id, title, tag, status}) => {
   return (
@@ -8,7 +8,7 @@ const Card = ({id, title, tag, status}) => {
         <div className="cardHeading flex-sb">
             <span style={{textTransform : "uppercase"}} className='color-grey'>{id}</span>
             <div className="imageContainer relative" style={{ width : "30px", height : "30px"}}>
-                <img style={{width : "100%", height : "100%",  borderRadius : "50%" }}  src={userImage} alt="UserImage" />
+                <img style={{width : "100%", height : "100%",  borderRadius : "60%" }}  src={userImage} alt="UserImage" />
                 <div className="spaceDiv"></div>
             </div>
         </div>

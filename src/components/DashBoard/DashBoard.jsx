@@ -1,10 +1,11 @@
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { DiCodeigniter } from "react-icons/di";
+import { HiAcademicCap } from "react-icons/hi2";
 import Card from "../Card/CardView";
 import "./DashBoard.css";
 import { useSelector } from "react-redux";
-import userImage from '../Assets/user-picture.png'
+import userImage from '../Assets/user-image.png'
 
 const DashView = () => {
   const { selectedData, user } = useSelector(
@@ -21,7 +22,7 @@ const DashView = () => {
                 <div className="dashCardHeading flex-sb">
                   <div className="leftView">
                     {!user ? (
-                      <DiCodeigniter />
+                      <HiAcademicCap />
                     ) : (
                       <>
                         <div
@@ -32,7 +33,7 @@ const DashView = () => {
                             style={{
                               width: "100%",
                               height: "100%",
-                              borderRadius: "80%",
+                              borderRadius: "70%",
                             }}
                             src={userImage}
                             alt="UserImage"
