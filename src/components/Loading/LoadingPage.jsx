@@ -11,13 +11,13 @@ const Loading = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        gap: "5px",
+        gap: "10px",
       }}
     >
       <Circles
-        height="80"
-        width="80"
-        color="#4fa94d"
+        height="100"
+        width="100"
+        color="00000"
         ariaLabel="circles-loading"
         wrapperStyle={{}}
         wrapperClass=""
@@ -25,12 +25,12 @@ const Loading = () => {
       />{" "}
       <span
         style={{
-          color: "green",
+          color: "black",
           fontWeight: "bolder",
-          letterSpacing: "2px",
+          letterSpacing: "3px",
         }}
       >
-        QuickSell
+        Loading
       </span>
     </div>
   );

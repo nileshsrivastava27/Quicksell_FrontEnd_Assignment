@@ -1,0 +1,33 @@
+.btn{
+    background:  #f8f8fa;;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.disBtn{
+    position: relative;
+}
+
+.selectStyle{
+    width: 100px;
+    border-radius: 5px;
+    background: white;
+    padding: 2px 5px;
+}
+.clickFade{
+    position: absolute;
+    width: 250px;
+    background-color: #f8f8fa;
+    border-radius: 10px;
+    margin-top: 10px;
+    z-index: 10;
+}
+
+.clickFade > *{
+    width: 100%;
+}
+
+
+.selectedClass{
+    padding: 3px;
+}

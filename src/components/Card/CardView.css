@@ -1,4 +1,17 @@
-.cardContainer{
+
+.cardGlobal > *{
+    width: 100%;
+}
+
+
+.tags{
+    width: max-content;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.cardGlobal{
     width: 100%;
     border: 1px solid rgb(214, 213, 213);
     border-radius: 8px;
@@ -6,12 +19,12 @@
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     background: white;
 }
-
-.cardContainer > *{
-    width: 100%;
+.cardFlexTags{
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
-
-.showStatus{
+.spaceDiv{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -19,17 +32,4 @@
     height: 15px;
     background: silver;
     border-radius: 50%;
-}
-
-.cardTags{
-    display: flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.tags{
-    width: max-content;
-    padding: 2px 8px;
-    border-radius: 5px;
-    border: 1px solid white;
 }

@@ -5,16 +5,16 @@ export const pickupData = (partition, allTickets, groupOrderValue) => async (con
     try {
         containerDis({ type: 'SELECT_DATA_REQUEST' })
 
-        let user = false;
-        let mySet = new Set();
         let arr = [], selectedData = [];
+        let tempSetVal = new Set();
+        let user = false;
 
         if (partition === 'status') {
             allTickets.forEach((elem) => {
-                mySet.add(elem.status);
+                tempSetVal.add(elem.status);
             })
 
-            arr = [...mySet];
+            arr = [...tempSetVal];
 
             arr.forEach((elem, index) => {
                 let arr = allTickets.filter((fElem) => {
@@ -48,11 +48,10 @@ export const pickupData = (partition, allTickets, groupOrderValue) => async (con
                 arr = allTickets.filter((fElem) => {
                     return index === fElem.priority;
                 })
-
                 selectedData.push({
                     [index]: {
                         title: elem,
-                        value: arr
+                        value: arr,
                     }
                 })
             })

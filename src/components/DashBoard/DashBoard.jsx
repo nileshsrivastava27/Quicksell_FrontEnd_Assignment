@@ -1,9 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { DiCodeigniter } from "react-icons/di";
 import { AiOutlinePlus } from "react-icons/ai";
-import "./DashBoardView.css";
+import { DiCodeigniter } from "react-icons/di";
 import Card from "../Card/CardView";
+import "./DashBoard.css";
+import { useSelector } from "react-redux";
+import userImage from '../Assets/user-picture.png'
 
 const DashView = () => {
   const { selectedData, user } = useSelector(
@@ -12,11 +13,11 @@ const DashView = () => {
 
   return (
     selectedData && (
-      <div className="dashContainer" style={{ justifyContent: "space-evenly" }}>
+      <div className="dashboardContainer" style={{ justifyContent: "space-evenly" }}>
         {selectedData.map((elem, index) => {
           return (
             <>
-              <div key={index} className="dashCardContainer">
+              <div key={index} className="dashboardCardContainer">
                 <div className="dashCardHeading flex-sb">
                   <div className="leftView">
                     {!user ? (
@@ -33,7 +34,7 @@ const DashView = () => {
                               height: "100%",
                               borderRadius: "50%",
                             }}
-                            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+                            src={userImage}
                             alt="UserImage"
                           />
                         </div>
