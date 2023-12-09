@@ -13,7 +13,7 @@ const DashView = () => {
 
   return (
     selectedData && (
-      <div className="dashboardContainer" style={{ justifyContent: "space-evenly" }}>
+      <div className="dashboardContainer" style={{ justifyContent: "space-around" }}>
         {selectedData.map((elem, index) => {
           return (
             <>
@@ -26,13 +26,13 @@ const DashView = () => {
                       <>
                         <div
                           className="imageContainer relative"
-                          style={{ width: "15px", height: "15px", display : 'inline-block' }}
+                          style={{ width: "20px", height: "20px", display : 'inline-block' }}
                         >
                           <img
                             style={{
                               width: "100%",
                               height: "100%",
-                              borderRadius: "50%",
+                              borderRadius: "80%",
                             }}
                             src={userImage}
                             alt="UserImage"
@@ -47,7 +47,7 @@ const DashView = () => {
                   </div>
                   <div className="rightView">
                     <AiOutlinePlus />{" "}
-                    <span style={{ letterSpacing: "3px" }}>...</span>
+                    <span style={{ letterSpacing: "6px" }}>...</span>
                   </div>
                 </div>
                 <div className="dashList flex-gap-10">
