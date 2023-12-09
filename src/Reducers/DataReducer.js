@@ -17,7 +17,7 @@ export const DataReducer = createReducer({}, {
 });
 
 
-export const SelectDataReducer = createReducer({}, {
+export const pickupDataReducer = createReducer({}, {
     SELECT_DATA_REQUEST : (state) => {
         state.loading = true;
         state.selectedData = [];

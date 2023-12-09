@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { DiCodeigniter } from "react-icons/di";
 import { AiOutlinePlus } from "react-icons/ai";
-import "./DashView.css";
-import Card from "../Card/Card";
+import "./DashBoardView.css";
+import Card from "../Card/CardView";
 
 const DashView = () => {
   const { selectedData, user } = useSelector(
-    (state) => state.SelectDataReducer
+    (state) => state.pickupDataReducer
   );
 
   return (

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { TiThList } from "react-icons/ti";
-import "./TopNav.css";
+import "./TopNavigationBar.css";
 import { useDispatch, useSelector} from "react-redux";
-import { selectData } from "../../Actions/DataAction";
+import { pickupData } from "../../Actions/DataAction";
 
 const getGroup = () => {
   // console.log(localStorage.getItem("group"));
@@ -42,11 +42,11 @@ const TopNav = () => {
 
   useEffect(() => {
     if(groupValue === 'user'){
-      dispatch(selectData(groupValue, {
+      dispatch(pickupData(groupValue, {
         allTickets, allUser
       }, orderValue))
     }else{
-      dispatch(selectData(groupValue, allTickets, orderValue));
+      dispatch(pickupData(groupValue, allTickets, orderValue));
     }
   }, [allTickets, dispatch, groupValue, allUser, orderValue]);
  

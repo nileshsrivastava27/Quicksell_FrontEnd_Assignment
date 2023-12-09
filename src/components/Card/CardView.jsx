@@ -1,5 +1,5 @@
 import React from 'react'
-import './Card.css';
+import './CardView.css';
 
 const Card = ({id, title, tag, status}) => {
   return (

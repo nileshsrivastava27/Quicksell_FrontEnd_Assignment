@@ -1,45 +1,33 @@
 import axios from 'axios';
 
-export const fetchAllData = () => async (dispatch) =>{
+
+export const pickupData = (partition, allTickets, groupOrderValue) => async (containerDis) => {
     try {
-        dispatch({type : 'DATA_REQUEST'})
-    
-        const {data} = await axios.get("https://api.quicksell.co/v1/internal/frontend-assignment");
-
-        dispatch({type : 'DATA_SUCCESS', payload : data});
-
-    } catch (error) {
-        dispatch({type : 'DATA_FAILURE'})
-    }
-}
-
-export const selectData = (group, allTickets, orderValue) => async (dispatch) =>{
-    try {
-        dispatch({type : 'SELECT_DATA_REQUEST'})
+        containerDis({ type: 'SELECT_DATA_REQUEST' })
 
         let user = false;
         let mySet = new Set();
         let arr = [], selectedData = [];
 
-        if(group === 'status'){
+        if (partition === 'status') {
             allTickets.forEach((elem) => {
                 mySet.add(elem.status);
             })
-    
+
             arr = [...mySet];
-    
+
             arr.forEach((elem, index) => {
                 let arr = allTickets.filter((fElem) => {
                     return elem === fElem.status;
                 })
                 selectedData.push({
-                    [index] : {
-                        title : elem,
-                        value : arr
+                    [index]: {
+                        title: elem,
+                        value: arr
                     }
                 })
             })
-        }else if(group === 'user'){
+        } else if (partition === 'user') {
             user = true;
             allTickets?.allUser?.forEach((elem, index) => {
                 arr = allTickets?.allTickets?.filter((Felem) => {
@@ -47,13 +35,13 @@ export const selectData = (group, allTickets, orderValue) => async (dispatch) =>
                 })
 
                 selectedData.push({
-                    [index] : {
-                        title : elem.name,
-                        value : arr
+                    [index]: {
+                        title: elem.name,
+                        value: arr
                     }
                 })
             })
-        }else{
+        } else {
             let prior_list = ["No priority", "Low", "Medium", "High", "Urgent"];
 
             prior_list.forEach((elem, index) => {
@@ -62,29 +50,44 @@ export const selectData = (group, allTickets, orderValue) => async (dispatch) =>
                 })
 
                 selectedData.push({
-                    [index] : {
-                        title : elem,
-                        value : arr
+                    [index]: {
+                        title: elem,
+                        value: arr
                     }
                 })
             })
         }
-
-        if(orderValue === "title"){
+        
+        if (groupOrderValue === "priority") {
+            selectedData.forEach((elem, index) => {
+                elem[index]?.value?.sort((a, b) => b.priority - a.priority)
+            })
+        }
+        if (groupOrderValue === "title") {
             selectedData.forEach((elem, index) => {
                 elem[index]?.value?.sort((a, b) => a.title.localeCompare(b.title))
             })
         }
 
-        if(orderValue === "priority"){
-            selectedData.forEach((elem, index) => {
-                elem[index]?.value?.sort((a, b) => b.priority - a.priority)
-            })
-        }
-        
-        dispatch({type : 'SELECT_DATA_SUCCESS', payload : {selectedData, user}});
+
+        containerDis({ type: 'SELECT_DATA_SUCCESS', payload: { selectedData, user } });
 
     } catch (error) {
-        dispatch({type : 'SELECT_DATA_FAILURE', payload : error.message})
+        containerDis({ type: 'SELECT_DATA_FAILURE', payload: error.message })
+    }
+}
+
+
+
+export const dataRetrieval = () => async (containerDis) => {
+    try {
+        containerDis({ type: 'DATA_REQUEST' })
+
+        const { data } = await axios.get("https://api.quicksell.co/v1/internal/frontend-assignment");
+
+        containerDis({ type: 'DATA_SUCCESS', payload: data });
+
+    } catch (error) {
+        containerDis({ type: 'DATA_FAILURE' })
     }
 }
